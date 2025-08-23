@@ -11,7 +11,7 @@
   --radius: 18px;
   --shadow: 0 10px 24px rgba(21, 222, 48, 0.08);
 
-  /* Colors (from style guide) */
+  /* Colors */
   --primary: #0b0b0b;
   --success: #39AE3B;
   --warning: #FFCC2A;
@@ -38,21 +38,21 @@
   --font-display: "Lab Grotesk", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  --display-2xl: 72px;
-  --display-xl: 56px;
-  --display-m: 40px;
+  --display-2xl: clamp(42px, 8vw, 72px);
+  --display-xl: clamp(32px, 6vw, 56px);
+  --display-m: clamp(24px, 4vw, 40px);
 
-  --h1: 32px;
-  --h2: 28px;
-  --h3: 24px;
-  --h4: 20px;
-  --h5: 18px;
-  --h6: 16px;
+  --h1: clamp(28px, 4vw, 32px);
+  --h2: clamp(24px, 3.5vw, 28px);
+  --h3: clamp(20px, 3vw, 24px);
+  --h4: clamp(18px, 2.5vw, 20px);
+  --h5: clamp(16px, 2vw, 18px);
+  --h6: clamp(14px, 2vw, 16px);
 
-  --body-xl: 20px;
-  --body-l: 18px;
-  --body-m: 16px;
-  --small: 14px;
+  --body-xl: clamp(18px, 2.5vw, 20px);
+  --body-l: clamp(16px, 2vw, 18px);
+  --body-m: clamp(14px, 1.8vw, 16px);
+  --small: clamp(12px, 1.5vw, 14px);
 
   --tight: 1.1;
   --normal: 1.5;
@@ -77,8 +77,6 @@ body {
   background: var(--white);
   color: var(--primary);
   line-height: var(--normal);
-  margin: 0;
-  padding: 0;
 }
 
 /* ========= Typography Utilities ========= */
@@ -212,13 +210,12 @@ h6,
 }
 
 .container {
-    max-width: 1120px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 16px;
-  
 }
 
-/* ========= Header & Nav ========= */
+/* ========= Header ========= */
 .header {
   text-align: center;
   padding: var(--g2) 0;
@@ -228,7 +225,6 @@ h6,
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 22px;
-  text-align: center;
   margin-bottom: 10px;
 }
 
@@ -243,7 +239,6 @@ h6,
 }
 
 .nav__link {
-  display: inline-block;
   padding: 6px 16px;
   border-radius: 40px;
   color: #fff;
@@ -253,20 +248,15 @@ h6,
 }
 
 .nav__link:hover {
-  background: #fff;  /* تظهر فقط عند المرور */
+  background: #fff;
   color: #000;
   font-weight: 500;
 }
-
-
-
-
 
 /* ========= Hero ========= */
 .hero {
   width: min(var(--container), 100% - 32px);
   margin-inline: auto;
-  padding: 0;
 }
 
 .hero__center {
@@ -274,10 +264,8 @@ h6,
 }
 
 .hero__title {
-  display: inline-block;
-  text-align: left;
   font-family: var(--font-display);
-  font-size: 227px;
+  font-size: clamp(48px, 15vw, 227px);
   font-weight: 700;
   line-height: var(--tight);
   margin-bottom: 30px;
@@ -290,7 +278,6 @@ h6,
 .hero__title-line--second {
   display: flex;
   align-items: baseline;
-  justify-content: flex-start;
   gap: 20px;
 }
 
@@ -300,7 +287,6 @@ h6,
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--gray-500);
-  transform: translateY(-6px);
 }
 
 .hero__bottom {
@@ -326,36 +312,32 @@ h6,
 .hero__cta-email {
   color: var(--primary);
   text-decoration: none;
-  font-weight: 400;
 }
 
 .hero__intro {
   max-width: 60ch;
-  line-height: 1.6;
-  color: #111;
-  text-align: left;
   font-size: 18px;
-  margin-left: 70px; /* الإزاحة لليمين */
+  margin-left: 300px;
 }
 
 /* Responsive hero */
 @media (max-width: 768px) {
-  .hero__title {
-    font-size: 48px; /* حجم مناسب للشاشات الصغيرة */
+  .hero__bottom {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
   }
 
   .hero__intro {
-    margin: 0 auto;
-    text-align: center;
-    padding: 0 16px;
+    margin: auto;
+    font-size: 16px;
   }
 
   .hero__title-line--second {
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
-
 
 /* ========= Projects ========= */
 .projects {
@@ -372,7 +354,6 @@ h6,
   align-items: center;
   max-width: 1300px;
   width: 100%;
-  margin-inline: auto;
   margin-bottom: 2rem;
 }
 
@@ -382,7 +363,6 @@ h6,
 
 .projects__title {
   font-size: var(--h2);
-  margin: 0;
 }
 
 .projects__subtitle {
@@ -396,18 +376,22 @@ h6,
   gap: 50px 70px;
   max-width: 1300px;
   width: 100%;
-  margin: 0 auto;
 }
 
 @media (max-width: 720px) {
   .projects__grid {
-    grid-template-columns: 1fr; /* عمود واحد */
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .projects__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
   }
 
   .projects__info {
     max-width: 100%;
-    text-align: center;
   }
 }
 
@@ -429,37 +413,19 @@ h6,
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
-  display: block;
-  margin-bottom: 16px;
 }
 
 .card__title {
   font-size: var(--h3);
   font-weight: 700;
-  margin-bottom: 6px;
   padding: 0 12px;
+  margin-bottom: 6px;
 }
 
 .card__desc {
   font-size: var(--small);
   color: var(--gray-500);
   margin: 0 12px;
-}
-
-.projects__more {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.projects__more-link {
-  font-size: 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  color: #111;
-}
-
-.projects__more-link:hover {
-  transform: translateX(4px);
 }
 
 /* ========= Expertise ========= */
@@ -494,23 +460,15 @@ h6,
 .expertise__item p {
   font-size: 16px;
   color: var(--gray-500);
-  line-height: 1.6;
-  max-width: 350px;
 }
 
 @media (max-width: 720px) {
   .expertise__grid {
     grid-template-columns: 1fr;
     gap: 40px;
-    justify-items: center;
-  }
-
-  .expertise__item p {
-    max-width: 100%;
     text-align: center;
   }
 }
-
 
 /* ========= Full banner ========= */
 .full-banner {
@@ -521,12 +479,12 @@ h6,
 
 .full-banner__title {
   font-family: var(--font-display);
-  font-size: 9.7vw;
+  font-size: clamp(28px, 9vw, 96px);
   font-weight: 500;
   color: #fff;
-  line-height: 1;
+  line-height: 1.1;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 /* ========= Testimonials ========= */
@@ -561,23 +519,25 @@ h6,
 
 .testimonials__name {
   font-weight: 700;
-  color: #000;
   margin-bottom: 4px;
 }
 
 .testimonials__role {
-  font-weight: 400;
-  color: var(--gray-500);
   font-size: 15px;
+  color: var(--gray-500);
 }
 
 @media (max-width: 720px) {
   .testimonials__grid {
     grid-template-columns: 1fr;
-    row-gap: 24px;
+    row-gap: 20px;
+    text-align: center;
+  }
+
+  .testimonials__meta {
+    align-items: center;
   }
 }
-
 
 /* ========= Contact footer ========= */
 .contact-footer {
@@ -588,14 +548,12 @@ h6,
 
 .contact-footer__title {
   font-family: var(--font-display);
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: clamp(28px, 7vw, 64px);
   font-weight: 700;
   margin-bottom: 24px;
-  color: #000;
 }
 
 .contact-footer__btn {
-  display: inline-block;
   background: #000;
   color: #fff;
   padding: 12px 36px;
@@ -632,7 +590,6 @@ h6,
 .custom-footer__right a {
   text-decoration: none;
   color: #444;
-  transition: color 0.3s ease;
 }
 
 .custom-footer__right a:hover {
@@ -648,5 +605,6 @@ h6,
 
   .custom-footer__right {
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
