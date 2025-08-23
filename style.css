@@ -77,6 +77,8 @@ body {
   background: var(--white);
   color: var(--primary);
   line-height: var(--normal);
+  margin: 0;
+  padding: 0;
 }
 
 /* ========= Typography Utilities ========= */
@@ -210,7 +212,10 @@ h6,
 }
 
 .container {
-  margin-inline: auto;
+    max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+  
 }
 
 /* ========= Header & Nav ========= */
@@ -237,16 +242,25 @@ h6,
   font-size: 16px;
 }
 
-.nav a {
+.nav__link {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 40px;
   color: #fff;
   text-decoration: none;
   font-weight: 400;
-  transition: color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav a:hover {
-  color: #999;
+.nav__link:hover {
+  background: #fff;  /* تظهر فقط عند المرور */
+  color: #000;
+  font-weight: 500;
 }
+
+
+
+
 
 /* ========= Hero ========= */
 .hero {
@@ -263,7 +277,7 @@ h6,
   display: inline-block;
   text-align: left;
   font-family: var(--font-display);
-  font-size: var(--display-2xl);
+  font-size: 227px;
   font-weight: 700;
   line-height: var(--tight);
   margin-bottom: 30px;
@@ -290,11 +304,12 @@ h6,
 }
 
 .hero__bottom {
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 200px;
-  margin-top: var(--g4);
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .hero__cta {
@@ -320,24 +335,27 @@ h6,
   color: #111;
   text-align: left;
   font-size: 18px;
+  margin-left: 70px; /* الإزاحة لليمين */
 }
 
 /* Responsive hero */
 @media (max-width: 768px) {
-  .hero__bottom {
-    flex-direction: column;
-    gap: 20px;
+  .hero__title {
+    font-size: 48px; /* حجم مناسب للشاشات الصغيرة */
     text-align: center;
   }
 
   .hero__intro {
-    margin: auto;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 16px;
   }
 
   .hero__title-line--second {
     justify-content: center;
   }
 }
+
 
 /* ========= Projects ========= */
 .projects {
@@ -383,7 +401,13 @@ h6,
 
 @media (max-width: 720px) {
   .projects__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* عمود واحد */
+    gap: 30px;
+  }
+
+  .projects__info {
+    max-width: 100%;
+    text-align: center;
   }
 }
 
@@ -474,6 +498,20 @@ h6,
   max-width: 350px;
 }
 
+@media (max-width: 720px) {
+  .expertise__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+  }
+
+  .expertise__item p {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+
 /* ========= Full banner ========= */
 .full-banner {
   width: 100%;
@@ -536,13 +574,10 @@ h6,
 @media (max-width: 720px) {
   .testimonials__grid {
     grid-template-columns: 1fr;
-    row-gap: var(--g3);
-  }
-
-  .testimonials__meta {
-    justify-content: flex-start;
+    row-gap: 24px;
   }
 }
+
 
 /* ========= Contact footer ========= */
 .contact-footer {
