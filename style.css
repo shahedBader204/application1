@@ -608,3 +608,126 @@ h6,
     flex-wrap: wrap;
   }
 }
+
+/* ========= Responsive Mobile Fixes ========= */
+@media (max-width: 768px) {
+
+  /* Joey® أعلى اليمين */
+  .brand__logo {
+    text-align: right;
+    margin-right: 16px;
+  }
+
+  /* القائمة داخل دائرة سوداء */
+  .nav {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-size: 0;
+    /* لإخفاء النصوص */
+  }
+
+  .nav__link {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    padding: 0;
+    border-radius: 2px;
+  }
+
+  /* Scroll Down ينزل تحت كلمة branding ع اليمين */
+  .hero__scroll-inline {
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  /* النصوص تحت بعض */
+  .hero__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .hero__cta,
+  .hero__intro {
+    text-align: left;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Projects: العنوان يسار و More يمين */
+  .projects__header {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .projects__title {
+    text-align: left;
+  }
+
+  /* Expertise: خليك نفس التصميم */
+  .expertise__grid {
+    text-align: left;
+  }
+
+  /* Testimonials */
+  .testimonials__grid {
+    text-align: left;
+  }
+
+  .testimonials__meta {
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  /* Footer */
+  .custom-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    text-align: left;
+  }
+
+  .custom-footer__right {
+    justify-content: flex-start;
+  }
+}
+
+/* ترتيب Let's Talk + الإيميل يسار وتحت بعض، والنص التعريفي يمين */
+@media (max-width: 768px) {
+  .hero__bottom {
+    display: flex;
+    flex-direction: row;
+    /* عمودين جنب بعض */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-direction: column;
+    /* العناصر تحت بعض */
+    align-items: flex-start;
+    /* يسار */
+    gap: 6px;
+    flex: 1;
+  }
+
+  .hero__intro {
+    flex: 1;
+    text-align: right;
+    /* يمين */
+    margin: 0;
+  }
+}
