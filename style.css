@@ -320,34 +320,61 @@ max-width: 500px;
   width: 100%;
 }
 
-/* ========= Responsive ========= */
 @media (max-width: 768px) {
+  .projects {
+    padding-inline: 16px;  /* مسافة من يمين ويسار الشاشة */
+  }
+
   .projects__header {
     flex-direction: row;       /* Projects و More بنفس السطر */
     justify-content: space-between;
     align-items: center;
-    text-align: left;          /* Projects تبقى طبيعية */
-    gap: 0;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   .projects__title {
-    font-size: 28px;           /* تصغير الخط للموبايل */
+    font-size: 24px;  /* حجم مناسب للهاتف */
+  }
+
+  .projects__more {
+    margin-left: auto; /* More تجي على اليمين */
   }
 
   .projects__info {
     max-width: 100%;
-    margin-top: 10px;          /* ينزل الوصف تحت Projects */
+    margin-top: 8px;     
+    text-align: left;    /* الوصف يبقى تحت Projects */
   }
 
-  .projects__more {
-    align-self: center;        /* تبقى More على نفس السطر */
+  .projects__subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;   /* يوزع الكلام بشكل مرتب */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* يخلي النص فقط 3 أسطر */
+    -webkit-box-orient: vertical;
+    overflow: hidden;      /* يمنع التكسير */
   }
 
   .projects__grid {
     grid-template-columns: 1fr; /* الصور عمود واحد */
     gap: 24px;
+    width: 100%;
+  }
+
+  .card {
+    padding-inline: 8px;  /* مسافة صغيرة للصور */
+  }
+
+  .card__img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
   }
 }
+
 
 
 .card {
