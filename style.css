@@ -321,31 +321,28 @@ max-width: 500px;
 }
 
 @media (max-width: 768px) {
-  .projects {
-    padding-inline: 16px;  /* مسافة من يمين ويسار الشاشة */
-  }
-
   .projects__header {
-    flex-direction: row;       /* Projects و More بنفس السطر */
-    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    width: 100%;
-    margin-bottom: 1rem;
   }
 
   .projects__title {
-    font-size: 24px;  /* حجم مناسب للهاتف */
+    order: 1;
   }
 
   .projects__more {
-    margin-left: auto; /* More تجي على اليمين */
+    order: 2;
+    margin-left: auto; /* يروح عاليمين */
   }
 
   .projects__info {
-    max-width: 100%;
-    margin-top: 8px;     
-    text-align: left;    /* الوصف يبقى تحت Projects */
+    order: 3;
+    flex-basis: 100%; /* ينزل سطر لحاله */
+    margin-top: 8px;
   }
+
+
 
   .projects__subtitle {
     font-size: 15px;
