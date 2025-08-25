@@ -320,53 +320,23 @@ max-width: 500px;
   width: 100%;
 }
 
-/* ========= Responsive ========= */
+/* -------- Media Query للموبايل -------- */
 @media (max-width: 768px) {
-  .hero__title {
-    font-size: clamp(36px, 12vw, 64px);
-    text-align: center;
-  }
-
-  .hero__title-line--second {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .scroll-btn {
-    margin-top: 10px;
-  }
-
-  .hero__bottom {
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .hero__cta {
-    align-items: center;
-  }
-
-  .hero__intro {
-    margin-left: 0;
-    font-size: 16px;
-    max-width: 90%;
-  }
-
-  .projects__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
   .projects__header {
-    flex-direction: column;
-    text-align: center;
-    gap: 16px;
+    padding-inline: 16px;
+    margin-bottom: 1rem; 
+    align-items: center;
   }
 
   .projects__info {
     max-width: 100%;
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .projects__subtitle {
+    line-height: 1.6;
+    margin-top: 8px;
   }
 }
 
@@ -649,22 +619,4 @@ text-align: left;
 }
 }
 
-/* -------- Media Query للموبايل -------- */
-@media (max-width: 768px) {
-  .projects__header {
-    padding-inline: 16px;
-    margin-bottom: 1rem; 
-    align-items: center;
-  }
-
-  .projects__info {
-    max-width: 100%;
-    width: 100%;
-    padding-inline: 16px;
-  }
-
-  .projects__subtitle {
-    line-height: 1.6;
-    margin-top: 8px;
-  }}
 
