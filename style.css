@@ -648,3 +648,33 @@ max-width: 60%;
 text-align: left;
 }
 }
+
+.projects__grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 50px 70px;
+max-width: 1300px;
+width: 100%;
+}
+
+/* تصميم الهاتف */
+@media (max-width: 768px) {
+.projects__grid {
+grid-template-columns: 1fr; /* عمود واحد */
+gap: 30px; /* يمكن تعديل المسافة بين العناصر */
+}
+
+.projects__header {
+flex-direction: column; /* لجعل العنوان و"More" فوق بعض */
+align-items: flex-start;
+gap: 1rem;
+}
+
+.projects__more {
+align-self: flex-start; /* لضمان بقاء "More" على يسار الشاشة */
+}
+
+.projects__info {
+max-width: 100%; /* عرض النصوص كامل عرض الهاتف */
+}
+}
