@@ -79,110 +79,6 @@ body {
   line-height: var(--normal);
 }
 
-/* ========= Typography Utilities ========= */
-/* ========= Typography ========= */
-.display-2xl {
-  font-family: var(--font-display);
-  font-size: var(--display-2xl);
-  font-weight: 700;
-  line-height: var(--tight);
-}
-
-.display-xl {
-  font-family: var(--font-display);
-  font-size: var(--display-xl);
-  font-weight: 700;
-  line-height: var(--tight);
-}
-
-.display-m {
-  font-family: var(--font-display);
-  font-size: var(--display-m);
-  font-weight: 500;
-  line-height: var(--tight);
-}
-
-h1, .h1 {
-  font-size: var(--h1);
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-
-h2, .h2 {
-  font-size: var(--h2);
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-
-h3, .h3 {
-  font-size: var(--h3);
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-
-h4, .h4 {
-  font-size: var(--h4);
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-
-h5, .h5 {
-  font-size: var(--h5);
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-
-h6, .h6 {
-  font-size: var(--h6);
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-
-.body-xl {
-  font-size: var(--body-xl);
-  font-family: var(--font-body);
-}
-
-.body-l {
-  font-size: var(--body-l);
-  font-family: var(--font-body);
-}
-
-.body-m {
-  font-size: var(--body-m);
-  font-family: var(--font-body);
-}
-
-.small {
-  font-size: var(--small);
-  font-family: var(--font-body);
-}
-
-/* ========= Utilities ========= */
-.text-primary { color: var(--primary); }
-.text-success { color: var(--success); }
-.text-warning { color: var(--warning); }
-.text-error { color: var(--error); }
-.text-muted { color: var(--gray-500); }
-
-.bg-primary { background: var(--primary); color: var(--white); }
-.bg-success { background: var(--success); color: var(--white); }
-.bg-warning { background: var(--warning); }
-.bg-error { background: var(--error); color: var(--white); }
-
-.section__title {
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: var(--g4);
-}
-
-
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
 /* ========= Header ========= */
 .header {
   text-align: center;
@@ -250,9 +146,9 @@ h6, .h6 {
 }
 
 .hero__title-line--branding {
-  display: inline-flex;     /* يخلي Branding + الزر بنفس السطر */
-  align-items: center;      /* يوسّط الزر عمودياً مع النص */
-  gap: 16px;                /* المسافة بين Branding والزر */
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .scroll-btn {
@@ -296,23 +192,8 @@ h6, .h6 {
 }
 
 .hero__intro {
-  margin-left: auto;
   font-size: 18px;
-  margin-left:600px;
-}
-
-/* Responsive hero */
-@media (max-width: 768px) {
-  .hero__bottom {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-  
-  .hero__title-line--second {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  max-width: 500px;
 }
 
 /* ========= Projects ========= */
@@ -327,7 +208,7 @@ h6, .h6 {
 .projects__header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* محاذاة العناصر فوق */
+  align-items: flex-start;
   max-width: 1300px;
   width: 100%;
   margin-bottom: 2rem;
@@ -348,7 +229,7 @@ h6, .h6 {
 }
 
 .projects__more {
-  align-self: flex-end; /* ينزل More → لآخر سطر */
+  align-self: flex-end;
 }
 
 .projects__more-link {
@@ -370,7 +251,40 @@ h6, .h6 {
   width: 100%;
 }
 
-@media (max-width: 720px) {
+/* ========= Responsive ========= */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: clamp(36px, 12vw, 64px);
+    text-align: center;
+  }
+
+  .hero__title-line--second {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .scroll-btn {
+    margin-top: 10px;
+  }
+
+  .hero__bottom {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero__cta {
+    align-items: center;
+  }
+
+  .hero__intro {
+    margin-left: 0;
+    font-size: 16px;
+    max-width: 90%;
+  }
+
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -386,6 +300,7 @@ h6, .h6 {
     max-width: 100%;
   }
 }
+
 
 .card {
   box-shadow: var(--shadow);
