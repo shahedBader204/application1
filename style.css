@@ -80,9 +80,11 @@ body {
 }
 
 /* ========= Header ========= */
+/* ========= Header & Nav ========= */
 .header {
   text-align: center;
   padding: var(--g2) 0;
+  position: relative;
 }
 
 .brand__logo {
@@ -115,6 +117,41 @@ body {
   background: #fff;
   color: #000;
   font-weight: 500;
+}
+
+/* ========= Hamburger ========= */
+.hamburger {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* ========= Media Query for Mobile ========= */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* hide desktop nav */
+  }
+  .hamburger {
+    display: flex; /* show hamburger */
+  }
 }
 
 /* ========= Hero ========= */
