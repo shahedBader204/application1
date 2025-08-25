@@ -233,6 +233,38 @@ body {
   max-width: 500px;
 }
 
+.hero__bottom {
+max-width: 1110px;
+margin: 0 auto;
+padding: 0 16px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.hero__cta {
+display: flex;
+flex-direction: column;
+gap: 6px;
+font-size: 16px;
+}
+
+.hero__cta-title {
+font-weight: 700;
+}
+
+.hero__cta-email {
+color: var(--primary);
+text-decoration: none;
+}
+
+.hero__intro {
+font-size: 18px;
+max-width: 500px;
+}
+
+
+
 /* ========= Projects ========= */
 .projects {
   padding-block: 64px;
@@ -570,3 +602,38 @@ body {
   }
 }
 
+
+/* ========== Mobile Design ========== */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: clamp(32px, 8vw, 60px);
+    text-align: center;
+  }
+
+  /* Scroll Down يكون باليمين */
+  .scroll-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 10px;
+  }
+
+  /* البلوك اللي تحت الزر */
+  .hero__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .hero__cta {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero__intro {
+    font-size: 16px;
+    max-width: 60%;
+    text-align: left;
+  }
+}
