@@ -80,6 +80,7 @@ body {
 }
 
 /* ========= Typography Utilities ========= */
+/* ========= Typography ========= */
 .display-2xl {
   font-family: var(--font-display);
   font-size: var(--display-2xl);
@@ -101,43 +102,37 @@ body {
   line-height: var(--tight);
 }
 
-h1,
-.h1 {
+h1, .h1 {
   font-size: var(--h1);
   font-family: var(--font-display);
   font-weight: 700;
 }
 
-h2,
-.h2 {
+h2, .h2 {
   font-size: var(--h2);
   font-family: var(--font-display);
   font-weight: 700;
 }
 
-h3,
-.h3 {
+h3, .h3 {
   font-size: var(--h3);
   font-family: var(--font-display);
   font-weight: 600;
 }
 
-h4,
-.h4 {
+h4, .h4 {
   font-size: var(--h4);
   font-family: var(--font-display);
   font-weight: 600;
 }
 
-h5,
-.h5 {
+h5, .h5 {
   font-size: var(--h5);
   font-family: var(--font-display);
   font-weight: 600;
 }
 
-h6,
-.h6 {
+h6, .h6 {
   font-size: var(--h6);
   font-family: var(--font-display);
   font-weight: 600;
@@ -164,50 +159,23 @@ h6,
 }
 
 /* ========= Utilities ========= */
-.text-primary {
-  color: var(--primary);
-}
+.text-primary { color: var(--primary); }
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-error { color: var(--error); }
+.text-muted { color: var(--gray-500); }
 
-.text-success {
-  color: var(--success);
-}
-
-.text-warning {
-  color: var(--warning);
-}
-
-.text-error {
-  color: var(--error);
-}
-
-.text-muted {
-  color: var(--gray-500);
-}
-
-.bg-primary {
-  background: var(--primary);
-  color: var(--white);
-}
-
-.bg-success {
-  background: var(--success);
-  color: var(--white);
-}
-
-.bg-warning {
-  background: var(--warning);
-}
-
-.bg-error {
-  background: var(--error);
-  color: var(--white);
-}
+.bg-primary { background: var(--primary); color: var(--white); }
+.bg-success { background: var(--success); color: var(--white); }
+.bg-warning { background: var(--warning); }
+.bg-error { background: var(--error); color: var(--white); }
 
 .section__title {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: var(--g4);
 }
+
 
 .container {
   max-width: 1120px;
@@ -281,12 +249,25 @@ h6,
   gap: 20px;
 }
 
-.hero__scroll-inline {
-  font-family: var(--font-body);
-  font-size: 15px;
-  letter-spacing: .08em;
+.hero__title-line--branding {
+  display: inline-flex;     /* يخلي Branding + الزر بنفس السطر */
+  align-items: center;      /* يوسّط الزر عمودياً مع النص */
+  gap: 16px;                /* المسافة بين Branding والزر */
+}
+
+.scroll-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 9999px;
+  background: #fafafa;
+  font-weight: 600;
+  font-size: 13px;
+  font-family: sans-serif;
   text-transform: uppercase;
-  color: var(--gray-500);
+  white-space: nowrap;
+  color: #000;
+  cursor: default;
 }
 
 .hero__bottom {
@@ -315,9 +296,9 @@ h6,
 }
 
 .hero__intro {
-  max-width: 60ch;
+  margin-left: auto;
   font-size: 18px;
-  margin-left: 300px;
+  margin-left:600px;
 }
 
 /* Responsive hero */
@@ -327,12 +308,7 @@ h6,
     gap: 20px;
     text-align: center;
   }
-
-  .hero__intro {
-    margin: auto;
-    font-size: 16px;
-  }
-
+  
   .hero__title-line--second {
     justify-content: center;
     flex-wrap: wrap;
@@ -351,14 +327,14 @@ h6,
 .projects__header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* محاذاة العناصر فوق */
   max-width: 1300px;
   width: 100%;
   margin-bottom: 2rem;
 }
 
 .projects__info {
-  max-width: 28%;
+  max-width: 500px;
 }
 
 .projects__title {
@@ -368,6 +344,22 @@ h6,
 .projects__subtitle {
   font-size: var(--body-m);
   color: var(--gray-500);
+  line-height: 1.6;
+}
+
+.projects__more {
+  align-self: flex-end; /* ينزل More → لآخر سطر */
+}
+
+.projects__more-link {
+  font-size: var(--body-m);
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.projects__more-link:hover {
+  text-decoration: underline;
 }
 
 .projects__grid {
@@ -431,36 +423,50 @@ h6,
 /* ========= Expertise ========= */
 .expertise {
   padding-block: var(--g6);
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .expertise__title {
-  font-size: var(--h2);
+  font-size: 32px;
   font-weight: 800;
   margin-bottom: var(--g5);
+  color: #000;
 }
 
 .expertise__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--g6) var(--g5);
+  display: flex;
+  justify-content: space-between; /* تساوي الهوامش يمين ويسار */
+  flex-wrap: wrap;
+  gap: 60px 40px;
 }
 
 .expertise__item {
-  max-width: 500px;
+  flex: 0 1 500px;   /* عرض مرن لحد 500px */
 }
 
 .expertise__item h3 {
-  font-size: 20px;
+  font-size: 18px;     /* حجم العناوين الفرعية مثل Branding, UI Design */
   font-weight: 700;
   margin-bottom: var(--g2);
+  color: #000;
 }
 
 .expertise__item p {
-  font-size: 16px;
-  color: var(--gray-500);
+  font-size: 15px;     /* النصوص تحت العناوين */
+  line-height: 1.6;
+  color: #555;         /* قريب من الرمادي الظاهر بالصورة */
 }
+
+/* إزاحة العمود الأيمن قليلاً */
+.expertise__item:nth-child(2),
+.expertise__item:nth-child(4) {
+  padding-left: 40px;
+}
+
+
 
 @media (max-width: 720px) {
   .expertise__grid {
@@ -481,7 +487,7 @@ h6,
 
 .full-banner h2 {
   font-size: clamp(40px, 10vw, 140px);
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
   line-height: 1.1;
   margin: 0;
