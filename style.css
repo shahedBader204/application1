@@ -320,23 +320,32 @@ max-width: 500px;
   width: 100%;
 }
 
-/* -------- Media Query للموبايل -------- */
+/* ========= Responsive ========= */
 @media (max-width: 768px) {
   .projects__header {
-    padding-inline: 16px;
-    margin-bottom: 1rem; 
+    flex-direction: row;       /* Projects و More بنفس السطر */
+    justify-content: space-between;
     align-items: center;
+    text-align: left;          /* Projects تبقى طبيعية */
+    gap: 0;
+  }
+
+  .projects__title {
+    font-size: 28px;           /* تصغير الخط للموبايل */
   }
 
   .projects__info {
     max-width: 100%;
-    width: 100%;
-    padding-inline: 16px;
+    margin-top: 10px;          /* ينزل الوصف تحت Projects */
   }
 
-  .projects__subtitle {
-    line-height: 1.6;
-    margin-top: 8px;
+  .projects__more {
+    align-self: center;        /* تبقى More على نفس السطر */
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr; /* الصور عمود واحد */
+    gap: 24px;
   }
 }
 
