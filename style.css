@@ -604,3 +604,126 @@ body {
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+  .full-banner {
+    text-align: left;
+    padding-left: 16px;  /* مسافة يسار موحدة */
+    padding-right: 16px;
+  }
+
+  /* العنوان */
+  .full-banner h2 {
+    font-size: clamp(24px, 8vw, 48px);
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    text-align: left;
+    display: block;
+    margin: 0 0 16px 0;
+  }
+
+  /* استبدال النص */
+  .full-banner h2::after {
+    content: "sign for digital exp";
+    display: block;
+  }
+  .full-banner h2 span {
+    display: none;
+  }
+
+  /* نصوص Tes.. */
+  .tes {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin: 0 0 16px 0;
+  }
+
+  /* اسم الشخص والوظيفة */
+  .author,
+  .author-role {
+    text-align: left;
+    margin: 0;
+    display: block;
+  }
+
+  /* الفوتر */
+  .footer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .footer a {
+    margin-right: 12px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 768px) {
+  .full-banner {
+    text-align: left;
+    padding-left: 16px;  /* مسافة يسار موحدة */
+    padding-right: 16px;
+  }
+
+  /* العنوان */
+  .full-banner h2 {
+    font-size: clamp(24px, 8vw, 48px);
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+    text-align: left;
+    display: block;
+    margin: 0 0 16px 0;
+  }
+
+  /* استبدال النص */
+  .full-banner h2::after {
+    content: "sign for digital exp";
+    display: block;
+  }
+  .full-banner h2 span {
+    display: none;
+  }
+
+  /* نصوص Tes.. */
+  .tes {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    margin: 0 0 16px 0;
+  }
+
+  /* اسم الشخص والوظيفة */
+  .author,
+  .author-role {
+    text-align: left;
+    margin: 0;
+    display: block;
+  }
+
+  /* الفوتر */
+  .footer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .footer a {
+    margin-right: 12px;
+    display: inline-block;
+  }
+}
+
