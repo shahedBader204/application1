@@ -132,12 +132,12 @@ body {
   .nav {
     display: none;
   }
-
   .hamburger {
     display: flex;
   }
 }
 
+/* ================= HERO ================= */
 .hero {
   width: min(var(--container), 100% - 32px);
   margin-inline: auto;
@@ -216,6 +216,41 @@ body {
   max-width: 500px;
 }
 
+@media (max-width:768px) {
+  .hero__title {
+    font-size: clamp(32px, 8vw, 60px);
+    text-align: center;
+  }
+  .hero__title-line {
+    display: block;
+  }
+  .hero__title-line--second {
+    display: block;
+    margin-top: 8px;
+  }
+  .scroll-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 12px;
+  }
+  .hero__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .hero__cta {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero__intro {
+    font-size: 16px;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* ================= PROJECTS ================= */
 .projects {
   padding-block: 64px;
   display: flex;
@@ -276,22 +311,18 @@ body {
     flex-wrap: wrap;
     align-items: center;
   }
-
   .projects__title {
     order: 1;
   }
-
   .projects__more {
     order: 2;
     margin-left: auto;
   }
-
   .projects__info {
     order: 3;
     flex-basis: 100%;
     margin-top: 8px;
   }
-
   .projects__subtitle {
     font-size: 15px;
     line-height: 1.6;
@@ -302,17 +333,14 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 24px;
     width: 100%;
   }
-
   .card {
     padding-inline: 8px;
   }
-
   .card__img {
     width: 100%;
     border-radius: var(--radius);
@@ -353,6 +381,7 @@ body {
   margin: 0 12px;
 }
 
+/* ================= EXPERTISE ================= */
 .expertise {
   padding-block: var(--g6);
   max-width: 1200px;
@@ -397,28 +426,7 @@ body {
   padding-left: 40px;
 }
 
-@media (max-width: 768px) {
-  .expertise__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .expertise__item {
-    flex: 1 1 100%;
-    padding-left: 0;
-  }
-
-  .expertise__item h3 {
-    font-size: 20px;
-  }
-
-  .expertise__item p {
-    font-size: 16px;
-  }
-}
-
+/* ================= FULL-BANNER ================= */
 .full-banner {
   width: 100%;
   background: #000;
@@ -438,6 +446,7 @@ body {
   text-overflow: clip;
 }
 
+/* ================= TESTIMONIALS ================= */
 .testimonials {
   max-width: 1300px;
   margin: 0 auto;
@@ -477,24 +486,7 @@ body {
   color: var(--gray-500);
 }
 
-@media (max-width: 768px) {
-  .full-banner h2 {
-    font-size: clamp(24px, 8vw, 48px);
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: clip;
-  }
-
-  .full-banner h2::after {
-    content: "sign for digital exp";
-    display: block;
-  }
-
-  .full-banner h2 span {
-    display: none;
-  }
-}
-
+/* ================= CONTACT FOOTER ================= */
 .contact-footer {
   background: #fff;
   padding: 80px 20px;
@@ -524,6 +516,7 @@ body {
   background: #333;
 }
 
+/* ================= CUSTOM FOOTER ================= */
 .custom-footer {
   background-color: #fff;
   padding: 24px 32px;
@@ -550,180 +543,97 @@ body {
   color: #000;
 }
 
-@media (max-width: 600px) {
-  .custom-footer {
+/* ================= MEDIA QUERY (MOBILE) ================= */
+@media (max-width: 768px) {
+  /* EXPERTISE */
+  .expertise {
+    padding-block: var(--g4);
+    padding-inline: 16px;
+  }
+  .expertise__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+  }
+  .expertise__item {
+    flex: 1 1 100%;
+    padding-left: 0 !important;
+  }
+  .expertise__item h3 {
+    font-size: 18px;
+  }
+  .expertise__item p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* FULL-BANNER */
+  .full-banner {
+    text-align: left;
+    padding: 32px 16px;
+  }
+  .full-banner h2 {
+    font-size: clamp(28px, 9vw, 42px);
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .full-banner h2::after,
+  .full-banner h2 span {
+    display: none;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding-inline: 16px;
+  }
+  .testimonials__grid {
+    display: flex;
     flex-direction: column;
     gap: 12px;
-    text-align: center;
   }
-
-  .custom-footer__right {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width:768px) {
-  .hero__title {
-    font-size: clamp(32px, 8vw, 60px);
-    text-align: center;
-  }
-
-  .hero__title-line {
-    display: block;
-  }
-
-  .hero__title-line--second {
-    display: block;
-    margin-top: 8px;
-  }
-
-  .scroll-btn {
-    display: block;
-    margin-left: auto;
-    margin-top: 12px;
-  }
-
-  .hero__bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .hero__cta {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .hero__intro {
+  .testimonials__text {
     font-size: 16px;
-    max-width: 60%;
+    line-height: 1.6;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    margin-bottom: 12px;
     text-align: left;
   }
-}
-
-@media (max-width: 768px) {
-  .full-banner {
-    text-align: left;
-    padding-left: 16px;  /* مسافة يسار موحدة */
-    padding-right: 16px;
-  }
-
-  /* العنوان */
-  .full-banner h2 {
-    font-size: clamp(24px, 8vw, 48px);
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: clip;
-    text-align: left;
-    display: block;
-    margin: 0 0 16px 0;
-  }
-
-  /* استبدال النص */
-  .full-banner h2::after {
-    content: "sign for digital exp";
-    display: block;
-  }
-  .full-banner h2 span {
-    display: none;
-  }
-
-  /* نصوص Tes.. */
-  .tes {
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-    margin: 0 0 16px 0;
-  }
-
-  /* اسم الشخص والوظيفة */
-  .author,
-  .author-role {
+  .testimonials__name,
+  .testimonials__role {
     text-align: left;
     margin: 0;
-    display: block;
   }
 
-  /* الفوتر */
-  .footer {
-    text-align: left;
-    display: flex;
+  /* CONTACT FOOTER */
+  .contact-footer {
+    padding: 60px 16px;
+  }
+  .contact-footer__title {
+    font-size: clamp(22px, 7vw, 36px);
+    margin-bottom: 16px;
+  }
+  .contact-footer__btn {
+    font-size: 15px;
+    padding: 12px 28px;
+  }
+
+  /* CUSTOM FOOTER */
+  .custom-footer {
     flex-direction: column;
     gap: 8px;
-    margin-top: 20px;
-  }
-
-  .footer a {
-    margin-right: 12px;
-    display: inline-block;
-  }
-}
-
-@media (max-width: 768px) {
-  .full-banner {
+    padding: 20px 16px;
+    align-items: flex-start;
     text-align: left;
-    padding-left: 16px;  /* مسافة يسار موحدة */
-    padding-right: 16px;
   }
-
-  /* العنوان */
-  .full-banner h2 {
-    font-size: clamp(24px, 8vw, 48px);
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: clip;
-    text-align: left;
-    display: block;
-    margin: 0 0 16px 0;
-  }
-
-  /* استبدال النص */
-  .full-banner h2::after {
-    content: "sign for digital exp";
-    display: block;
-  }
-  .full-banner h2 span {
-    display: none;
-  }
-
-  /* نصوص Tes.. */
-  .tes {
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-    margin: 0 0 16px 0;
-  }
-
-  /* اسم الشخص والوظيفة */
-  .author,
-  .author-role {
-    text-align: left;
-    margin: 0;
-    display: block;
-  }
-
-  /* الفوتر */
-  .footer {
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 20px;
-  }
-
-  .footer a {
-    margin-right: 12px;
-    display: inline-block;
+  .custom-footer__right {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
