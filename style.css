@@ -67,10 +67,8 @@ body {
 }
 
 .header {
-  display: flex;               /* لجعل العناصر في خط واحد */
-  justify-content: space-between; /* الشعار على اليسار والزر على اليمين */
-  align-items: center;         /* محاذاة عمودية وسط */
-  padding: var(--g2) 16px;     /* مسافة من الأعلى والأسفل ومن الأطراف */
+  text-align: center;
+  padding: var(--g2) 0;
   position: relative;
 }
 
@@ -78,6 +76,7 @@ body {
   font-family: var(--font-display);
   font-weight: 900;
   font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .nav {
@@ -96,6 +95,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 400;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav__link:hover {
@@ -104,12 +104,15 @@ body {
   font-weight: 500;
 }
 
-.menu-button {
+.hamburger {
   display: none;
   width: 50px;
   height: 50px;
   background: #000;
   border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -117,7 +120,7 @@ body {
   cursor: pointer;
 }
 
-.menu-button span {
+.hamburger span {
   display: block;
   width: 24px;
   height: 3px;
@@ -125,22 +128,14 @@ body {
   border-radius: 2px;
 }
 
-/* ======= Responsive ======= */
 @media (max-width: 768px) {
   .nav {
-    display: none; /* إخفاء القائمة العادية */
+    display: none;
   }
-
-  .header {
-    justify-content: space-between; /* الشعار والزر في طرفي السطر */
-    padding: var(--g2) 16px;
-  }
-
-  .menu-button {
-    display: flex; /* إظهار زر القائمة */
+  .hamburger {
+    display: flex;
   }
 }
-
 
 /* ================= HERO ================= */
 .hero {
@@ -233,15 +228,11 @@ body {
     display: block;
     margin-top: 8px;
   }
-.scroll-btn {
-  display: block;
-  margin-left: auto;
-  margin-top: 12px;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 8px 18px;
-}
-
+  .scroll-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 12px;
+  }
   .hero__bottom {
     flex-direction: column;
     align-items: flex-start;
@@ -255,7 +246,7 @@ body {
   .hero__intro {
     font-size: 16px;
     max-width: 100%;
-    text-align: right;
+    text-align: left;
   }
 }
 
