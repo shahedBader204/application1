@@ -113,10 +113,11 @@ body {
   top: 10px;
   right: 10px;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center; /* خلي الشرط بالوسط */
   align-items: center;
-  padding: 10px;
+  gap: 4px; /* المسافة بين الشرط */
   cursor: pointer;
+  padding: 0; /* نشيل البادينغ حتى يترتب صح */
 }
 
 .menu-button span {
