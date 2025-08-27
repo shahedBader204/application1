@@ -555,92 +555,92 @@ body {
 }
 
 /* ================= MEDIA QUERY ================= */
+/* ================= EXPERTISE ================= */
 @media (max-width: 768px) {
-
-  /* EXPERTISE */
   .expertise {
     padding-block: var(--g4);
     padding-inline: 16px;
   }
-
   .expertise__grid {
     display: flex;
     flex-direction: column;
     gap: 24px;
     text-align: left;
   }
-
   .expertise__item {
     flex: 1 1 100%;
     padding-left: 0 !important;
   }
-
   .expertise__item h3 {
     font-size: 18px;
   }
-
   .expertise__item p {
     font-size: 15px;
     line-height: 1.6;
   }
+}
 
+/* ================= FULL-BANNER ================= */
+@media (max-width: 768px) {
   .full-banner {
     text-align: left;
     padding: 32px 16px;
   }
-
   .full-banner h2 {
     font-size: clamp(28px, 9vw, 42px);
-    white-space: nowrap;
+    white-space: normal;
     overflow: visible;
     text-overflow: unset;
     line-height: 1.2;
     margin: 0;
   }
-
   .full-banner h2::after,
   .full-banner h2 span {
-    display: none;
+    display: none; /* شيل أي محتوى إضافي */
   }
+}
 
+/* ================= TESTIMONIALS ================= */
+@media (max-width: 768px) {
   .testimonials {
     padding-inline: 16px;
   }
-
   .testimonials__grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-
   .testimonials__text {
     font-size: 16px;
     line-height: 1.6;
+    -webkit-line-clamp: unset; /* خليه يظهر كامل */
     overflow: visible;
     margin-bottom: 12px;
-    text-align: left;
   }
-
   .testimonials__name,
   .testimonials__role {
     text-align: left;
     margin: 0;
   }
+}
 
+/* ================= CONTACT FOOTER ================= */
+@media (max-width: 768px) {
   .contact-footer {
     padding: 60px 16px;
   }
-
   .contact-footer__title {
     font-size: clamp(22px, 7vw, 36px);
     margin-bottom: 16px;
   }
-
   .contact-footer__btn {
     font-size: 15px;
     padding: 12px 28px;
   }
+}
 
+/* ================= CUSTOM FOOTER ================= */
+@media (max-width: 768px) {
   .custom-footer {
     flex-direction: column;
     gap: 8px;
@@ -648,7 +648,6 @@ body {
     align-items: flex-start;
     text-align: left;
   }
-
   .custom-footer__right {
     gap: 12px;
     flex-wrap: wrap;
