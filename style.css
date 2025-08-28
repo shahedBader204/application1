@@ -113,11 +113,14 @@ body {
   top: 10px;
   right: 10px;
   flex-direction: column;
-  justify-content: center; /* خلي الشرط بالوسط */
+  justify-content: center;
+  /* خلي الشرط بالوسط */
   align-items: center;
-  gap: 4px; /* المسافة بين الشرط */
+  gap: 4px;
+  /* المسافة بين الشرط */
   cursor: pointer;
-  padding: 0; /* نشيل البادينغ حتى يترتب صح */
+  padding: 0;
+  /* نشيل البادينغ حتى يترتب صح */
 }
 
 .menu-button span {
@@ -136,9 +139,20 @@ body {
   .menu-button {
     display: flex;
   }
+
+  .brand__logo {
+    text-align: left;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
 }
 
-/* ================= HERO ================= */
 .hero {
   width: min(var(--container), 100% - 32px);
   margin-inline: auto;
@@ -234,15 +248,22 @@ body {
 
   .scroll-btn {
     display: block;
-    margin-left: auto;
     margin-top: 12px;
+    margin-left: auto;
+    width: fit-content;
   }
 
+
   .hero__bottom {
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
-    margin-top: 20px;
+  }
+
+  .hero__intro,
+  .hero__cta {
+    flex: none;
   }
 
   .hero__cta {
@@ -252,12 +273,13 @@ body {
 
   .hero__intro {
     font-size: 16px;
-    max-width: 100%;
+    max-width: 400px;
     text-align: left;
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 
-/* ================= PROJECTS ================= */
 .projects {
   padding-block: 64px;
   display: flex;
@@ -394,7 +416,6 @@ body {
   margin: 0 12px;
 }
 
-/* ================= EXPERTISE ================= */
 .expertise {
   padding-block: var(--g6);
   max-width: 1200px;
@@ -439,7 +460,6 @@ body {
   padding-left: 40px;
 }
 
-/* ================= FULL-BANNER ================= */
 .full-banner {
   width: 100%;
   background: #000;
@@ -459,7 +479,6 @@ body {
   text-overflow: clip;
 }
 
-/* ================= TESTIMONIALS ================= */
 .testimonials {
   max-width: 1300px;
   margin: 0 auto;
@@ -499,7 +518,6 @@ body {
   color: var(--gray-500);
 }
 
-/* ================= CONTACT FOOTER ================= */
 .contact-footer {
   background: #fff;
   padding: 80px 20px;
@@ -528,7 +546,6 @@ body {
   background: #333;
 }
 
-/* ================= CUSTOM FOOTER ================= */
 .custom-footer {
   background-color: #fff;
   padding: 24px 32px;
@@ -555,38 +572,40 @@ body {
   color: #000;
 }
 
-/* ================= MEDIA QUERY ================= */
-/* ================= EXPERTISE ================= */
 @media (max-width: 768px) {
   .expertise {
     padding-block: var(--g4);
     padding-inline: 16px;
   }
+
   .expertise__grid {
     display: flex;
     flex-direction: column;
     gap: 24px;
     text-align: left;
   }
+
   .expertise__item {
     flex: 1 1 100%;
     padding-left: 0 !important;
   }
+
   .expertise__item h3 {
     font-size: 18px;
   }
+
   .expertise__item p {
     font-size: 15px;
     line-height: 1.6;
   }
 }
 
-/* ================= FULL-BANNER ================= */
 @media (max-width: 768px) {
   .full-banner {
     text-align: left;
     padding: 32px 16px;
   }
+
   .full-banner h2 {
     font-size: clamp(28px, 9vw, 42px);
     white-space: normal;
@@ -595,29 +614,33 @@ body {
     line-height: 1.2;
     margin: 0;
   }
+
   .full-banner h2::after,
   .full-banner h2 span {
-    display: none; /* شيل أي محتوى إضافي */
+    display: none;
   }
 }
 
-/* ================= TESTIMONIALS ================= */
 @media (max-width: 768px) {
   .testimonials {
     padding-inline: 16px;
   }
+
   .testimonials__grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
+
   .testimonials__text {
     font-size: 16px;
     line-height: 1.6;
-    -webkit-line-clamp: unset; /* خليه يظهر كامل */
+    -webkit-line-clamp: unset;
+    /* خليه يظهر كامل */
     overflow: visible;
     margin-bottom: 12px;
   }
+
   .testimonials__name,
   .testimonials__role {
     text-align: left;
@@ -625,22 +648,22 @@ body {
   }
 }
 
-/* ================= CONTACT FOOTER ================= */
 @media (max-width: 768px) {
   .contact-footer {
     padding: 60px 16px;
   }
+
   .contact-footer__title {
     font-size: clamp(22px, 7vw, 36px);
     margin-bottom: 16px;
   }
+
   .contact-footer__btn {
     font-size: 15px;
     padding: 12px 28px;
   }
 }
 
-/* ================= CUSTOM FOOTER ================= */
 @media (max-width: 768px) {
   .custom-footer {
     flex-direction: column;
@@ -649,6 +672,7 @@ body {
     align-items: flex-start;
     text-align: left;
   }
+
   .custom-footer__right {
     gap: 12px;
     flex-wrap: wrap;
